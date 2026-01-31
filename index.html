@@ -1,52 +1,21 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Frontend Deployment Test</title>
-  <style>
-    body {
-      font-family: Arial;
-      text-align: center;
-      margin-top: 50px;
-    }
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-    }
-  </style>
-</head>
-<body>
+<script>
+  console.log("JS loaded ✅");
 
-  <h1>Frontend + Backend Deployment</h1>
-  <button onclick="getMessage()">Get Message</button>
-  <p id="output"></p>
-
-  <script>
-    function getMessage() {
-      fetch("<script>
   function getMessage() {
+    console.log("Button clicked ✅");
+
     fetch("https://backend-test-4-lznf.onrender.com/api/message")
-      .then(res => res.json())
+      .then(res => {
+        console.log("Response received ✅", res);
+        return res.json();
+      })
       .then(data => {
+        console.log("Data:", data);
         document.getElementById("output").innerText = data.message;
       })
       .catch(err => {
+        console.log("Fetch error ❌", err);
         document.getElementById("output").innerText = "Error connecting to backend";
-        console.error(err);
       });
   }
 </script>
-")
-        .then(res => res.json())
-        .then(data => {
-          document.getElementById("output").innerText = data.message;
-        })
-        .catch(err => {
-          document.getElementById("output").innerText = "Error connecting to backend";
-        });
-    }
-  </script>
-
-</body>
-</html>
-
-
