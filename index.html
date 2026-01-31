@@ -22,7 +22,20 @@
 
   <script>
     function getMessage() {
-      fetch("https://backend-test-4-lznf.onrender.com")
+      fetch("<script>
+  function getMessage() {
+    fetch("https://backend-test-4-lznf.onrender.com/api/message")
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("output").innerText = data.message;
+      })
+      .catch(err => {
+        document.getElementById("output").innerText = "Error connecting to backend";
+        console.error(err);
+      });
+  }
+</script>
+")
         .then(res => res.json())
         .then(data => {
           document.getElementById("output").innerText = data.message;
@@ -35,4 +48,5 @@
 
 </body>
 </html>
+
 
