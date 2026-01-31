@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Frontend Deployment Test</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      margin-top: 50px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Frontend + Backend Deployment</h1>
+  <button onclick="getMessage()">Get Message</button>
+  <p id="output"></p>
+
+  <script>
+    function getMessage() {
+      fetch("https://YOUR_RENDER_BACKEND_URL/api/message")
+        .then(res => res.json())
+        .then(data => {
+          document.getElementById("output").innerText = data.message;
+        })
+        .catch(err => {
+          document.getElementById("output").innerText = "Error connecting to backend";
+        });
+    }
+  </script>
+
+</body>
+</html>
