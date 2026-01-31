@@ -22,7 +22,7 @@
 
   <script>
     function getMessage() {
-      fetch("https://YOUR_RENDER_BACKEND_URL/api/message")
+      fetch("https://backend-test-4-lznf.onrender.com")
         .then(res => res.json())
         .then(data => {
           document.getElementById("output").innerText = data.message;
@@ -35,3 +35,4 @@
 
 </body>
 </html>
+
